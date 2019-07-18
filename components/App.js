@@ -17,10 +17,10 @@ App = React.createClass({
         this.getGif(searchingText)  
           .then(gif =>
             this.setState({  
-            loading: false,  
-            gif: gif,  
-            searchingText: searchingText  
-          })
+                loading: false,  
+                gif: gif,  
+                searchingText: searchingText  
+            })
         )
         .catch(error => console.error("Something went wrong", error)); 
     },
@@ -31,7 +31,7 @@ App = React.createClass({
             const request = new XMLHttpRequest();
             request.onload = function() {
                 if (this.status === 200) {
-                    var data = JSON.parse(xhr.responseText).data; 
+                    var data = JSON.parse(this.responseText).data; 
                     var gif = {  
                         url: data.fixed_width_downsampled_url,
                         sourceUrl: data.url
@@ -57,16 +57,16 @@ App = React.createClass({
         };
 
         return (
-          <div style={styles}>
+            <div style={styles}>
                 <h1>GIF Search Engine!</h1>
                 <p>Find GIF on <a href='http://giphy.com'>giphy</a>. Press Enter to find another GIF.</p>
                 <Search onSearch={this.handleSearch}/>
-            <Gif 
-                loading={this.state.loading}
-                url={this.state.gif.url}
-                sourceUrl={this.state.gif.sourceUrl}
-            />
-          </div>
+                <Gif 
+                    loading={this.state.loading}
+                    url={this.state.gif.url}
+                    sourceUrl={this.state.gif.sourceUrl}
+                />
+            </div>
         );
     }
 });
