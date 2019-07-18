@@ -15,7 +15,7 @@ App = React.createClass({
           loading: true  
         });
         this.getGif(searchingText)  
-          .then (gif =>
+          .then(gif =>
             this.setState({  
             loading: false,  
             gif: gif,  
@@ -26,7 +26,7 @@ App = React.createClass({
     },
 
     getGif: searchingText => {
-        const url = `${GIPHY_API_URL} /v1/gifs/random?api_key= ${GIPHY_PUB_KEY} &tag= ${searchingText}`; 
+        const url = `${GIPHY_API_URL}/v1/gifs/random?api_key=${GIPHY_PUB_KEY}&tag=${searchingText}`; 
         return new Promise((resolve, reject) => {
             const request = new XMLHttpRequest();
             request.onload = function() {
