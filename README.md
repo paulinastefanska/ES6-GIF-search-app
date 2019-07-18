@@ -1,3 +1,3 @@
-# reactJS-GIF-search-engine
-https://paulinastefanska.github.io/reactJS-GIF-search-engine/ <br>
-ReactJS GIF search app.
+# reactJS-GIF-search-app
+https://paulinastefanska.github.io/ES6-GIF-search-app/ <br>
+Changed code from exercise GIF search engine - used ES6.
